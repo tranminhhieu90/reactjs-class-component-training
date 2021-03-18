@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { connect } from 'react-redux'
+import { setLocale } from './appReducer/actions';
+class App extends React.Component {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  handleChangeLanguage = () => {
+    let { dispatch } = this.props;
+    dispatch(setLocale('vn'))
+  }
+
+  render() {
+    const { appState } = this.props
+    console.log('appState', appState)
+    return (
+      <div className="App" >
+        <div>
+          <button onClick={this.handleChangeLanguage}>change language</button>
+        </div>
+      </div>
+    )
+  }
+}
+const mapStatetoProps = (state) => {
+  console.log('state', state)
+  return {
+    appState: state.appReducer
+  }
 }
 
-export default App;
+export default connect(mapStatetoProps)(App);
