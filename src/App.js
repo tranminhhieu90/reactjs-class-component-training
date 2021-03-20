@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from 'react-redux'
 import { setLocale } from './appReducer/actions';
+import { createStructuredSelector } from 'reselect';
+import { selectLocaleSelector } from 'appReducer/selector';
 class App extends React.Component {
 
 
@@ -10,8 +12,8 @@ class App extends React.Component {
   }
 
   render() {
-    const { appState } = this.props
-    console.log('appState', appState)
+    const { locale } = this.props
+    console.log('locale', locale)
     return (
       <div className="App" >
         <div>
@@ -21,11 +23,9 @@ class App extends React.Component {
     )
   }
 }
-const mapStatetoProps = (state) => {
-  console.log('state', state)
-  return {
-    appState: state.appReducer
-  }
-}
 
-export default connect(mapStatetoProps)(App);
+const mapStateToProps = createStructuredSelector({
+  locale: selectLocaleSelector,
+});
+
+export default connect(mapStateToProps)(App);
