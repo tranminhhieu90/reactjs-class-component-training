@@ -1,4 +1,4 @@
-import { FETCH_PATIENTS, DELETE_PATIENT, UPDATE_PATIENT } from './constants';
+import { FETCH_PATIENTS, FETCH_PATIENTS_SUCCESS } from './constants';
 
 
 const initialState = {
@@ -15,6 +15,12 @@ const patientReducer = (state = initialState, action) => {
       return {
         ...state,
         patientList: action.payload,
+      };
+    }
+    case FETCH_PATIENTS_SUCCESS: {
+      console.log('reducer', action.payload)
+      return {
+        ...state,
       };
     }
     default:

@@ -8,7 +8,6 @@ import routes from 'routes';
 const HomePage = React.lazy(() => import('containers/Home'));
 class App extends React.Component {
   render() {
-    console.log('createBrowserHistory()', createBrowserHistory())
     return (
       <Suspense fallback={<Loader />}>
         <Router history={createBrowserHistory()}>

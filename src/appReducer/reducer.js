@@ -47,11 +47,12 @@ const appReducer = (state = initialState, action) => {
       };
     }
     case SAVE_USER_INFO: {
-      const { userInfo, token } = action.payload;
+      console.log('action.payload', action.payload)
+      const { userId } = action.payload;
+      console.log('userIddsdsd', action.payload)
       return {
         ...state,
-        userInfo,
-        token,
+        userId,
       };
     }
     case REMOVE_USER_INFO: {
@@ -68,10 +69,9 @@ const appReducer = (state = initialState, action) => {
       };
     }
     case CHANGE_PATIENT_MODE: {
-      const { isCheckedPatientMode } = action.payload;
+      console.log('action.payload', action.payload)
       return {
         ...state,
-        isCheckedPatientMode,
       };
     }
     default:

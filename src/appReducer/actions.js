@@ -32,21 +32,22 @@ export const removeToken = () => {
   };
 };
 
-export const getUserInfo = (token) => {
+export const getUserInfo = (userId) => {
+
   return {
     type: GET_USER_INFO,
     payload: {
-      token,
+      userId
     },
   };
 };
 
-export const saveUserInfo = (userInfo, token) => {
+export const saveUserInfo = (userId) => {
+  console.log('userId', userId)
   return {
     type: SAVE_USER_INFO,
     payload: {
-      userInfo,
-      token,
+      userId,
     },
   };
 };
