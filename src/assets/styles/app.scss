@@ -1,0 +1,53 @@
+// @import '~rsuite/lib/styles/themes/default/index.less';
+// @import 'variables';
+
+//Custom font
+@font-face {
+  font-family: 'Nitti';
+  src: url('../fonts/NittiTypewriter.otf') format('truetype');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lulo';
+  src: url('../fonts/BeauLuloClean-OneBold.otf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body,html {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+.loading-container {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  background-color: #f8f8f840;
+}
+
+.rs-modal-wrapper {
+  display: flex;
+  align-items: center;
+}
+.container {
+  width: 90%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}

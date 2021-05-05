@@ -3,12 +3,17 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Redirect, Route, withRouter } from 'react-router-dom';
 import Loader from '../Loader';
+import MainLayout from '../Layout';
 
 class RouteElement extends React.Component {
 
   render() {
     const { component: Component } = this.props;
-    return <Component />;
+    return (
+      <MainLayout>
+        <Component />
+      </MainLayout>
+    );
   }
 }
 
